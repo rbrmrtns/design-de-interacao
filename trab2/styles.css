@@ -1,0 +1,65 @@
+.grid {
+  position: absolute;
+  width: 1020px;
+  height: 500px;
+  border: solid 1px black;
+  margin-top: 100px;
+}
+
+.user {
+  position: absolute;
+  width: 90px;
+  height: 20px;
+  background-color: blue;
+}
+
+.bloco {
+  position: absolute;
+  width: 90px;
+  height: 20px;
+}
+
+.bloco-vermelho {
+  background-color: red;
+}
+
+.bloco-laranja {
+  background-color: orange;
+}
+
+.bloco-amarelo {
+  background-color: yellow;
+}
+
+.bola {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: blueviolet;
+}
+
+#pontuacao {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.botaoInicio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  font-size: 48px;
+  background-color: #008CBA;
+}
+
+.botaoRecarregar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  font-size: 48px;
+  background-color: #f44336;
+}
