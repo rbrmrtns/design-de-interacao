@@ -103,10 +103,15 @@ function criarBotaoInicio() {
 }
 criarBotaoInicio();
 
-function criarBotaoRecarregar() {
+function criarBotaoRecarregar(tipo) {
   const botaoRecarregar = document.createElement('button');
-  botaoRecarregar.innerHTML = 'Tentar Novamente';
-  botaoRecarregar.classList.add('botaoRecarregar');
+  if (tipo == 'd') {
+    botaoRecarregar.innerHTML = 'Tentar Novamente';
+    botaoRecarregar.classList.add('botaoDerrota');
+  } else if (tipo == 'v') {
+    botaoRecarregar.innerHTML = 'Jogar Novamente';
+    botaoRecarregar.classList.add('botaoVitoria');
+  }
   grid.appendChild(botaoRecarregar);
   botaoRecarregar.addEventListener('click', function() {
     botaoRecarregar.style.display = 'none';
@@ -154,7 +159,11 @@ function moverUser(e) {
     case 'ArrowLeft':
       if (posicaoAtual[0] - 20 >= 0) {
         posicaoAtual[0] -= 20;
-        console.log(posicaoAtual[0] > 0);
+        console.log(posicaoAtual[0]);
+        criarUser();
+      } else {
+        posicaoAtual[0] = 0;
+        console.log('0');
         criarUser();
       }
       break;
@@ -209,6 +218,7 @@ function checarColisoes() {
         pontuacaoTexto.innerHTML = 'Você venceu!';
         clearInterval(timerId);
         document.removeEventListener('keydown', moverUser);
+        criarBotaoRecarregar('v');
       }
     }
   }
@@ -233,7 +243,7 @@ function checarColisoes() {
     clearInterval(timerId)
     pontuacaoTexto.innerHTML = 'Você perdeu!';
     document.removeEventListener('keydown', moverUser);
-    criarBotaoRecarregar();
+    criarBotaoRecarregar('d');
   }
 }
 
