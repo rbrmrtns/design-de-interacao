@@ -5,6 +5,7 @@ const blocoHeight = 20;
 const bolaDiametro = 20;
 const quadroWidth = 1020;
 const quadroHeight = 500;
+const pontuacaoMaxTexto = document.getElementById('pontuacaomax');
 let direcaoX = -2;
 let direcaoY = 2;
 
@@ -16,6 +17,8 @@ let bolaPosicaoAtual = bolaInicio;
 
 let timerId;
 let pontuacao = 0;
+let pontuacaoMax = localStorage.getItem('pontuacaoMax') || 0;
+pontuacaoMaxTexto.innerHTML = 'Pontuação Máxima: ' + pontuacaoMax;
 
 //classe bloco
 class Bloco {
@@ -172,6 +175,10 @@ function moverUser(e) {
         posicaoAtual[0] += 20;
         console.log(posicaoAtual[0]);
         criarUser();
+      } else {
+        posicaoAtual[0] = quadroWidth - blocoWidth;
+        console.log(posicaoAtual[0]);
+        criarUser();
       }
       break;
   }
@@ -214,6 +221,11 @@ function checarColisoes() {
       mudarDirecao();   
       pontuacao++;
       pontuacaoTexto.innerHTML = 'Pontuação: ' + pontuacao;
+      if (pontuacao > pontuacaoMax) {
+        pontuacaoMax = pontuacao;
+        pontuacaoMaxTexto.innerHTML = 'Pontuação Máxima: ' + pontuacao;
+        localStorage.setItem('pontuacaoMax', pontuacao);
+      }
       if (blocos.length == 0) {
         pontuacaoTexto.innerHTML = 'Você venceu!';
         clearInterval(timerId);
