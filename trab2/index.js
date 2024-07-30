@@ -6,6 +6,7 @@ const bolaDiametro = 20;
 const quadroWidth = 1020;
 const quadroHeight = 500;
 const pontuacaoMaxTexto = document.getElementById('pontuacaomax');
+const impactoBola = new Audio('impacto_bola.mp3');
 let direcaoX = -2;
 let direcaoY = 2;
 
@@ -232,6 +233,7 @@ function checarColisoes() {
         document.removeEventListener('keydown', moverUser);
         criarBotaoRecarregar('v');
       }
+      impactoBola.play();
     }
   }
   //checar colisões com a parede
