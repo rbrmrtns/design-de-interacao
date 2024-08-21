@@ -8,6 +8,10 @@ section {
   text-align: left;
 }
 
+input {
+  width: 100%;
+}
+
 .result {
   margin-top: 20px;
   word-wrap: break-word;
