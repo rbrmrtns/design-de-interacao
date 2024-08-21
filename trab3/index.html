@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Design de Interação</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <script type="text/javascript" src="script.js"></script>
+
+    <h1>Consultas às APIs da BrasilAPI</h1>
+
+    <section>
+      <h2>Taxas</h2>
+      <h4>Retorna as taxas de juros e alguns índices oficiais do Brasil</h4>
+      <button onclick="fetchTaxas()">Ver taxas</button>
+      <div id="taxas" class="result"></div>
+    </section>
+
+    <section>
+      <h2>Estados</h2>
+      <h4>Retorna informações de todos os estados do Brasil</h4>
+      <button onclick="fetchEstados()">Ver estados</button>
+      <div id="estados" class="result"></div>
+    </section>
+
+    <section>
+      <h2>Busca de Livro por ISBN</h2>
+      <h4>Informações sobre livros publicados no Brasil a partir do ISBN</h4>
+      <input
+        type="text"
+        id="isbnInput"
+        placeholder="Digite o código ISBN"
+        required
+      />
+      <button onclick="fetchLivro()">Consultar</button>
+      <div id="livro" class="result"></div>
+    </section>
+
+    <section>
+      <h2>REGISTRO.BR</h2>
+      <h4>Avalia o status de um domínio .br</h4>
+      <input
+        type="text"
+        id="dominioInput"
+        placeholder="Digite o domínio a ser avaliado"
+        required
+      />
+      <button onclick="fetchDominio()">Consultar</button>
+      <div id="dominioAv" class="result"></div>
+    </section>
+
+    <hr />
+
+    <h1>Exercícios com API</h1>
+
+    <section>
+      <h2>Promise.race</h2>
+      <button onclick="fetchWithRace()">Consultar APIs</button>
+      <div id="raceResult" class="result"></div>
+    </section>
+
+    <section>
+      <h2>Promise.all</h2>
+      <button onclick="fetchWithAll()">Consultar APIs</button>
+      <div id="allResult" class="result"></div>
+    </section>
+  </body>
+</html>

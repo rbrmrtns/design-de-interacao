@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1,
+section {
+  text-align: left;
+}
+
+.result {
+  margin-top: 20px;
+  word-wrap: break-word;
+  width: 50%;
+}
+
+.error {
+  color: red;
+}
+
+hr {
+  border: 5px solid green;
+  border-radius: 2.5px;
+}
+
+@media screen and (max-width: 600px) {
+  h1,
+  section {
+    text-align: center !important;
+  }
+
+  .result {
+    width: 100% !important;
+  }
+}
